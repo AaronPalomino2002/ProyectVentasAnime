@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AniWeb_Comics</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/logoCarrito.css">
+    <link rel="stylesheet" href="~/AniWeb_Comics.styles.css" asp-append-version="true" />
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1101400363459944491/1103101527947759676/ico.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NBR58Q9FGG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-NBR58Q9FGG');
+    </script>
+   
+</head>
+    
+    
+    
+    
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-custom bnb box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand navbar-ani" asp-area="" asp-controller="Home" asp-action="Index"><img src="https://cdn.discordapp.com/attachments/1101400363459944491/1102761139483451412/icopagebar.png" alt="" width="50px"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><img src="https://cdn.discordapp.com/attachments/1101400363459944491/1102836134888869918/menuico.png" alt="" class="toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link tfc" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link tfc" asp-area="" asp-controller="Home" asp-action="Nosotros">¿Quienes somos?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link tfc" asp-area="" asp-controller="Catalogo" asp-action="Index">Catalogo</a>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link tfc" asp-area="" asp-controller="Contacto" asp-action="Index">Contacto</a>
+                        </li> 
+                        <partial name="_MenuAdminPartial" />
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="container bnt">
+            <div class="row">
+                <div class="col">
+                    <h6>AniWeb Comics © 2023</h6>
+                    <img class="txt-logo-footer" src="https://cdn.discordapp.com/attachments/1101400363459944491/1101528205875216446/icopage.png" alt="">
+                </div>
+                <div class="col">
+                    <h6>CONÓCENOS</h6>
+                    <p>
+                        <a href="">Términos y Condiciones de Uso</a><br>
+                        <a href="">Política de Privacidad</a><br>
+                    </p>
+                </div>
+                <div class="col">
+                    <h6>REDES SOCIALES</h6>
+                    <p>
+                        <a href="https://www.facebook.com/Anicomiczone/posts/nos-encontramos-ubicados-en-la-avenida-la-molina-1167-tienda-102-centro-comercia/578542436210886/">Facebook <i class="fa-brands fa-facebook"></i></a><br>
+                        <a href="https://www.instagram.com/p/CjtEMKTAXTn/">Instagram <i class="fa-brands fa-instagram"></i></a><br>
+                    </p>
+                </div>
+                <div class="col">
+                    <img src="https://cdn.discordapp.com/attachments/1101400363459944491/1102418230443769916/blue-lightning.png" alt="" class="img-rayo">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
